@@ -23,7 +23,7 @@ def kbcfunc():
       b=b+1
       print(b,i)
     ans = int(input("Enter the right answer: "))
-    if a>4 or a<1 : 
+    if ans>4 or ans<1 : 
       print("Wrong ans!")
       print("Your final balance is: ",bal)
       break
@@ -37,4 +37,5 @@ def kbcfunc():
     a=a+1
   if bal == sum(pls):
     print("\n\n\nYour all answer was correct!\nYour final balance is: ",bal)
-# kbcfunc()
+    print("\n\n\n\n")
+kbcfunc()
