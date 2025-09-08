@@ -2,3 +2,5 @@ noteFromHarry
 temp.py
 tempCodeRunnerFile.py
 temp
+*.pyc
+__pycache__
