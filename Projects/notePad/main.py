@@ -10,14 +10,15 @@ with open(file_name,'r') as file:
     uinput = input("Enter your input (n = write note, v = veiw note, d = delete a note, q to exit the program): ")
     if uinput == 'n' or uinput=='N':
       while True:
-        note_input_from_user = input("Enter your note here")
+        note_input_from_user = input("Enter your note here : ")
         if not note_input_from_user:
           print("invalid input")
           continue
         else:
                     
           with open(file_name,'a') as write_note:
-            write_note.write(note_input_from_user)
+            lines = [note_input_from_user,'\n']
+            write_note.writelines(lines)
           break
         
     elif uinput == 'q' or uinput=='Q':
@@ -25,7 +26,7 @@ with open(file_name,'r') as file:
     else :
       print("Invalid input")
     with open(file_name,'r') as t:
-      print("note :",t.read())
+      print("note :\n",t.read())
     
 
 
