@@ -4,3 +4,6 @@ tempCodeRunnerFile.py
 temp
 *.pyc
 __pycache__
+
+.gitignore
+
