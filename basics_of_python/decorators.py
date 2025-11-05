@@ -1,13 +1,17 @@
 def greet(fx):
-  def mfx():
+  def mfx(*args, **kwargs):
     print("Good morning")
-    fx()
+    fx(*args, **kwargs)
     print("Thanks for using this function")
   return mfx
 
-# @greet
+@greet
 def hello():
   print("hello world")
 
-# hello()
-greet(hello)()
+def add(a,b):
+  print(a+b)
+
+hello()
+
+greet(add)(1,2) #same as adding @greet
