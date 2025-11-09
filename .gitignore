@@ -6,4 +6,7 @@ temp
 __pycache__
 
 .gitignore
-
+a
+a_*
+a-*
+a.*
