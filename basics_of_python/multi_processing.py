@@ -1,6 +1,7 @@
 import multiprocessing
 import requests
 import os
+import concurrent.futures
 
 def downloadFile(url, name):
   print(f"start downloading {name}")
@@ -8,13 +9,14 @@ def downloadFile(url, name):
   open(f"{name}","wb").write(response.content)
   print(f"finish downladed {name}")
 
-
+url_random = "https://lipsum.app/random/1600x900"
 urls = [
   "https://4kwallpapers.com/images/wallpapers/windows-11-light-3840x2160-24447.png", 
   "https://4kwallpapers.com/images/wallpapers/mountain-landscape-3840x2160-24317.jpg", 
   "https://4kwallpapers.com/images/wallpapers/winter-mountain-3840x2160-24311.jpg", 
   "https://4kwallpapers.com/images/wallpapers/night-starry-sky-forest-silhouette-astronomy-cosmos-5k-3840x2160-1679.jpg"
   ]
+
 
 pros = []
 for url in urls:
@@ -27,4 +29,15 @@ for url in urls:
 
 for p in pros:
   p.join()
+
+
+'''
+# dont try this at home
+with concurrent.futures.ProcessPoolExecutor() as executor:
+  l1 = [url_random for i in range(60)]
+  l2 = [i for i in range(60)]
+  results = executor.map(downloadFile, l1, l2)
+  for r in results:
+    print(r)
+'''
 
